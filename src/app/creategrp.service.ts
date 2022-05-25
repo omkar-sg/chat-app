@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { GroupChat } from "./group.service";
+
 
 
 export class Groups{
@@ -9,14 +9,12 @@ export class Groups{
 
 }
 
-@Injectable({
-    providedIn:'root'
-})
+@Injectable()
 
 export class CreateGroup{
 
     groups:Groups[]=[]
-    //constructor(private gc:GroupChat){  }
+    
 
     addgroup(gname:string){
        let arr=new Groups()
