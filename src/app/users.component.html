@@ -1,0 +1,134 @@
+<!-- <div>
+    <input type="text" id="gname" class="form-control" #gname> &nbsp;
+    <button (click)="addgroup(gname.value)">Create Group</button>
+</div>
+
+<div>
+    <input type="text"  class="form-control" #gnameu> &nbsp;
+    <input type="text" id="user" class="form-control" #user> &nbsp;
+    <button (click)="adduser(user.value,gnameu.value)">Add User</button>
+</div> -->
+
+
+<div class="container">
+    <div class="row align-items-start">
+      <div class="col">
+        <div>
+            <strong>Create Group</strong>
+            <input type="text" id="gname" class="form-control" #gname> &nbsp;
+            <button (click)="addgroup(gname.value)">Create Group</button>
+        </div>
+        
+        <div>
+            <strong>Add User</strong>
+
+
+            <div class="dropdown">
+               <select (change)="tagchange($event)">
+                   <option >Select Group</option>
+                   <option *ngFor="let g of getgrps()">{{g.gname}}</option>
+               </select>
+               
+              </div>
+
+            <!-- <input type="text"  class="form-control" #gnameu> &nbsp; -->
+            <input type="text" id="user" class="form-control" #user> &nbsp;
+            <button (click)="adduser(user.value)">Add User</button>
+        </div>
+      </div>
+      <div class="col">
+            <strong>Send Message</strong>
+            <div class="dropdown">
+                <select (change)="grp($event)">
+                    <option >Select Group</option>
+                    <option *ngFor="let g of getgrps()">{{g.gname}}</option>
+                </select>
+                
+               </div>
+
+               <strong>Select User</strong>
+               <div class="dropdown">
+                   <select (change)="tagchangeusr($event)">
+                       <option >Not Selected </option>
+                       <option *ngFor="let i of getgrp()">{{i}}</option>
+                   </select>
+                   
+                  </div>
+
+                
+
+
+            <!-- <input type="text"  class="form-control" #gnamesm> &nbsp;
+            <input type="text" id="smuser" class="form-control" #smuser> &nbsp;     -->
+           
+            <input type="text" id="msg" class="form-control" #msg> &nbsp;
+            
+            <button (click)="sendmsg(msg.value)">Send Message</button>
+
+            <!-- <div>
+                <strong>Group Chat</strong>
+                <div *ngFor="let g of getgrpchat()">
+                    <p>{{g.user}} : {{g.msg}}</p>
+                </div>
+
+            </div> -->
+        
+      </div>
+      <div class="col">
+        <div>
+            <!-- <strong>Select Group</strong>
+
+
+            <div class="dropdown">
+                <select (change)="tagchange($event)">
+                    <option >Select Chat</option>
+                    <option *ngFor="let g of getgrps()">{{g.gname}}</option>
+                </select>
+                
+               </div> -->
+
+
+
+
+            <!-- <input type="text"  class="form-control" #gnamesg> &nbsp;
+            <button (click)="flagf()">Select Group</button>
+         -->
+        </div>
+        <Strong>Group Chat :</Strong>
+        <div *ngFor="let g of getgrpchat()">
+            <p>{{g.user}} : {{g.msg}}</p>
+        </div>
+      </div>
+    </div>
+   
+
+<!-- <div>
+    <input type="text"  class="form-control" #gnamesm> &nbsp;
+    <input type="text" id="smuser" class="form-control" #smuser> &nbsp;    
+   
+    <input type="text" id="msg" class="form-control" #msg> &nbsp;
+    
+    <button (click)="sendmsg(gnamesm.value,smuser.value,msg.value)">Send Message</button>
+</div>
+
+<div>
+    <input type="text"  class="form-control" #gnamesg> &nbsp;
+    <button (click)="flagf()">Select Group</button>
+
+</div>
+
+<div *ngFor="let g of getgrpchat(gnamesg.value)">
+    <p>{{g.user}} : {{g.msg}}</p>
+</div> -->
+    
+
+
+
+<!-- 
+<div *ngFor="let usr of getusers()">
+    <p> {{usr}} </p>
+</div>
+
+<div *ngFor="let usr of getmsg()">
+    <p>{{usr.time}} : {{usr.user}} : {{usr.msg}} </p>
+</div> -->
